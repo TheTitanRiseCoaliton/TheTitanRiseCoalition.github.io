@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<div id="datepicker" class="calendar"></div>
+
+<p id="ingame0"></p>
+<p id="ingame1"></p>
+<p id="ingame2"></p>
+<p id="ingame3"></p>
+
+</html>
+
 <script type="text/javascript>function setTime(date,offset){
   let yd = Math.floor(new Date(date).getTime()/1000/60/60/6+5)+offset;
             let y = Math.floor(yd/480)+360;
@@ -80,12 +94,3 @@ $(function() {
         },firstDay: 1});
 });
 </script>
-
-
-
-<div id="datepicker" class="calendar"></div>
-
-<p id="ingame0"></p>
-<p id="ingame1"></p>
-<p id="ingame2"></p>
-<p id="ingame3"></p>
