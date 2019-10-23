@@ -1,0 +1,91 @@
+<script type="text/javascript>function setTime(date,offset){
+  let yd = Math.floor(new Date(date).getTime()/1000/60/60/6+5)+offset;
+            let y = Math.floor(yd/480)+360;
+            let d = yd%480;
+            
+            let wds = ["Peaklight",
+                       "Lightsong",
+                       "Rushlight",
+                       "Lightfall",
+                       "Fadelight",
+                       "Lightcall",
+                       "Crestlight",
+                       "Light's Turn"]
+            let wd = wds[d%8];
+  
+            let m = "Snowcrest";
+            if(d>40){
+              d -= 40;
+              m = "Snowsong";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Icerush";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Icefade";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Bloomcall";
+            }
+            if(d>40){
+              d -= 40;
+              m = "Springpeak";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Blossomfall";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Simmercrest";
+            }
+            if(d>40){
+              d -= 40;
+              m = "Simmersong";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Droughtrush";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Droughtfade";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Harvestcall";
+            }
+            if(d>40){
+              d -= 40;
+              m = "Autumnpeak";
+            }
+            if(d>32){
+              d -= 32;
+              m = "Reapfall";
+            }  
+            $( "#ingame"+offset ).text((offset<2?"0":"")+offset*6+":00-"
++(offset<1?"0":"")+(offset+1)*6+":00 \t"+d+"th "+m+" Year "+y+" 5th Era, a "+wd);
+}
+
+$(function() {
+  
+  $( "#datepicker" ).datepicker({ onSelect: function(date) {
+            setTime(date,0)
+            setTime(date,1)
+            setTime(date,2)
+            setTime(date,3)
+        },firstDay: 1});
+});
+</script>
+
+
+
+<div id="datepicker" class="calendar"></div>
+
+<p id="ingame0"></p>
+<p id="ingame1"></p>
+<p id="ingame2"></p>
+<p id="ingame3"></p>
